@@ -16,8 +16,9 @@ public class Game extends Canvas implements Runnable {
 	public static final int WIDTH = 320;
 	public static final int HEIGHT = WIDTH / 12 * 9;
 	public static final int SCALE = 2;
-	public final String TITLE = "2D Space Game";
-
+	public final String TITLE = "Galaxy Defender";
+	
+	
 	private boolean running = false;
 	// Initializing thread
 	private Thread thread;
@@ -28,7 +29,13 @@ public class Game extends Canvas implements Runnable {
 	private BufferedImage background = null;
 	
 	private boolean is_shooting = false;
+	// Tells the game how many spaceships to spawn
+	private int enemy_count = 5;
+	private int enemy_killed = 0;
 	
+
+
+
 	// Initializing Player
 	private Player p;
 	// Initializing Controller
@@ -52,6 +59,7 @@ public class Game extends Canvas implements Runnable {
 		tex = new Textures(this);
 		p = new Player(200, 200, tex);
 		c = new Controller(this, tex);
+		c.createEnemy(enemy_count);
 	}
 
 	private synchronized void start(){
@@ -214,10 +222,24 @@ public class Game extends Canvas implements Runnable {
 	 
 
 	public BufferedImage getSpriteSheet() {
-		// TODO Auto-generated method stub
 		return spriteSheet;
 	}
 	
+	public int getEnemy_count() {
+		return enemy_count;
+	}
+
+	public void setEnemy_count(int enemy_count) {
+		this.enemy_count = enemy_count;
+	}
+
+	public int getEnemy_killed() {
+		return enemy_killed;
+	}
+
+	public void setEnemy_killed(int enemy_killed) {
+		this.enemy_killed = enemy_killed;
+	}
 	
 
 

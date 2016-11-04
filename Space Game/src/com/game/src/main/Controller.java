@@ -1,4 +1,4 @@
-package com.game.src.main;
+ package com.game.src.main;
 
 import java.awt.Graphics;
 import java.util.LinkedList;
@@ -14,13 +14,17 @@ public class Controller {
 	Game game;
 	Textures tex;
 	
-	
+	public void createEnemy(int enemy_count){
+		for(int i = 0; i < enemy_count; i++){
+			// Randomizes enemy spawn location
+			addEnemy(new Enemy(r.nextInt(Game.WIDTH * Game.SCALE), 0, tex));
+		}
+	}
 	
 	public Controller(Game game, Textures tex){
 		this.game = game;
 		this.tex = tex;
-		// Randomizes enemy spawn location
-		addEnemy(new Enemy(r.nextInt(Game.WIDTH * Game.SCALE), 0, tex));
+		
 		}
 	
 	
