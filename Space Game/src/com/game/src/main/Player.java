@@ -2,10 +2,10 @@ package com.game.src.main;
 
 
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
-public class Player {
-	private double x;
-	private double y;
+public class Player extends GameObject {
+	
 	private double velX = 0;
 	private double velY = 0;
 	
@@ -13,8 +13,7 @@ public class Player {
 	
 	
 	public Player(double x, double y, Textures tex){
-		this.x = x;
-		this.y = y;
+		super(x,y);
 		this.tex = tex;
 				
 	}
@@ -37,6 +36,11 @@ public class Player {
 
 		
 	}
+	
+	public Rectangle getBounds() {
+		return new Rectangle((int) x, (int) y, 32, 32);
+	}
+	
 	/**
 	 * Draws out our image
 	 * @param g

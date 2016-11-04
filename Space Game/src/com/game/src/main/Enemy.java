@@ -1,17 +1,16 @@
 package com.game.src.main;
 
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.util.Random;
 
-public class Enemy {
-	private double x, y;
+public class Enemy extends GameObject{
 	private Textures tex;
 	Random r = new Random();
 	private int speed = (r.nextInt(3)+1);
 	
 	public Enemy(double x, double y, Textures tex){
-		this.x = x;
-		this.y = y;
+		super(x, y);
 		this.tex = tex;
 	}
 	
@@ -28,6 +27,10 @@ public class Enemy {
 			y = 0;
 			x = r.nextInt(Game.WIDTH * Game.SCALE);
 		}
+	}
+	
+	public Rectangle getBounds() {
+		return new Rectangle((int) x, (int) y, 32, 32);
 	}
 	
 	public void render(Graphics g){

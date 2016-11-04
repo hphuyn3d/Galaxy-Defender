@@ -76,5 +76,13 @@ public class Controller {
 	public void removeEnemy(Enemy block){
 		e.remove(block);
 	}
+	
+	public LinkedList<Bullet> getBullet(){
+		return b;
+	}
+	
+	public LinkedList<Enemy> getEnemy(){
+		return e  ;
+	}
 
 }
