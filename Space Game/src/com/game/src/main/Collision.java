@@ -12,4 +12,16 @@ public class Collision {
 		return false;
 	}
 
-}
+
+
+
+	public static boolean Crash(Enemy e, LinkedList<Bullet> b){
+		for(int i = 0; i < b.size(); i++){
+			if(e.getBounds().intersects(b.get(i).getBounds())){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	}

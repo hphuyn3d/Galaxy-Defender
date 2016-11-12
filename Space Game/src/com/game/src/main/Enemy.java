@@ -7,11 +7,15 @@ import java.util.Random;
 public class Enemy extends GameObject{
 	private Textures tex;
 	Random r = new Random();
+	private Game game;
+	private Controller c;
 	private int speed = (r.nextInt(3)+1);
 	
-	public Enemy(double x, double y, Textures tex){
+	public Enemy(double x, double y, Textures tex, Controller c, Game game){
 		super(x, y);
 		this.tex = tex;
+		this.c = c;
+		this.game = game;
 	}
 	
 	/**
@@ -26,6 +30,12 @@ public class Enemy extends GameObject{
 			speed = (r.nextInt(3)+1);
 			y = 0;
 			x = r.nextInt(Game.WIDTH * Game.SCALE);
+		}
+		if(Collision.Crash(this, game.b)){
+			c.removeEnemy(this);
+			// gets enemy killed than adds one to it
+			game.setEnemy_killed(game.getEnemy_killed() + 1);
+			
 		}
 	}
 	

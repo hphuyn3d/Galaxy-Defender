@@ -17,7 +17,7 @@ public class Controller {
 	public void createEnemy(int enemy_count){
 		for(int i = 0; i < enemy_count; i++){
 			// Randomizes enemy spawn location
-			addEnemy(new Enemy(r.nextInt(Game.WIDTH * Game.SCALE), 0, tex));
+			addEnemy(new Enemy(r.nextInt(Game.WIDTH * Game.SCALE), 0, tex, this, game  ));
 		}
 	}
 	
@@ -29,10 +29,6 @@ public class Controller {
 	
 	
 
-
-	/** 
-	 * 
-	 */
 	public void tick(){
 		for(int i = 0; i < b.size(); i++){
 			TempBullet = b.get(i);
