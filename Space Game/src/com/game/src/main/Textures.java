@@ -11,9 +11,7 @@ public class Textures {
 		 getTextures();
 	}
 	
-	/**
-	 * 
-	 */
+	
 	private void getTextures(){
 		player = ss.grabImage(1, 1, 32, 32);
 		missle = ss.grabImage(2, 1, 32, 32);

@@ -1,3 +1,12 @@
+/**
+ * Galaxy Defender, a 2D space game where the objective is to 
+ * shoot down as many enemy space ships possible.
+ * However, there is a twist.
+ * Shoot one down, and two more will appear
+ * @author Hung Huynh
+ * 
+ */
+
 package com.game.src.main;
 
 import java.awt.Canvas;
@@ -133,9 +142,7 @@ public class Game extends Canvas implements Runnable {
 		stop();
 	}
 
-	/**
-	 * Everything in the game that updates
-	 */
+	
 	private void tick() {
 		// if the state equals game, then run through the tick methods.
 		if (state == STATE.GAME) {
@@ -151,9 +158,7 @@ public class Game extends Canvas implements Runnable {
 
 	}
 
-	/**
-	 * Everything in the game that renders
-	 */
+	
 	private void render() {
 		BufferStrategy bs = this.getBufferStrategy();
 		if (bs == null) {
@@ -162,8 +167,6 @@ public class Game extends Canvas implements Runnable {
 		}
 		// creates graphic context for drawing buffers
 		Graphics g = bs.getDrawGraphics();
-		//////////////////////////////////
-
 		g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
 		g.drawImage(background, 0, 0, null);
 		if (state == STATE.GAME) {
@@ -172,7 +175,6 @@ public class Game extends Canvas implements Runnable {
 		} else if (state == STATE.MENU) {
 			menu.render(g);
 		}
-		//////////////////////////////////
 		g.dispose();
 		bs.show();
 
@@ -196,11 +198,7 @@ public class Game extends Canvas implements Runnable {
 		}
 	}
 
-	/**
-	 * Method that resets the input back to 0.
-	 * 
-	 * @param e
-	 */
+
 	public void keyReleased(KeyEvent e) {
 		int key = e.getKeyCode();
 		if (key == KeyEvent.VK_RIGHT) {

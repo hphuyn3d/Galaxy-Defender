@@ -1,3 +1,7 @@
+/**
+ * This is the bullet class. Bullets that shoot from your space ship is made here
+ * 
+ */
 package com.game.src.main;
 
 import java.awt.Graphics;
@@ -30,11 +34,7 @@ public class Bullet extends GameObject {
 		return new Rectangle((int) x, (int) y, 32, 32);
 	}
 
-	/**
-	 * Makes the bullet destroy itself when it goes pass the screen
-	 * 
-	 * @return
-	 */
+
 	public double getY() {
 		return y;
 	}

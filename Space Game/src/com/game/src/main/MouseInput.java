@@ -5,11 +5,11 @@ import java.awt.event.MouseListener;
 
 public class MouseInput implements MouseListener {
 
+	// Not Used
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-
-	}
+		
+}
 
 	public void mousePressed(MouseEvent e) {
 		int mx = e.getX();
@@ -30,19 +30,22 @@ public class MouseInput implements MouseListener {
 		}
 
 	}
-
+	
+	// Not Used
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 
 	}
-
+	
+	// Not Used
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 
 	}
-
+	
+	// Not Used
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
